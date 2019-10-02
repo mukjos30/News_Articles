@@ -1,27 +1,25 @@
 {% extends 'base.html'%}
-{% import 'macros.html' as macro %}
+{% import 'macros.html' as macro%}
 
-{% block content%}
-<div class="container">
-		<!-- Business News Section  -->
-        <h3> Top Business News Sources</h3>
-        <hr>
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+{% endblock %}
 
-        {{ macro.displaySourceList(sources)}}
+{% block content %}
+<body>
 
-        <!-- Business News Section  -->
-         
-        
-        <!-- Entertainment News Section  -->
-         
-        <h3> Top Entertainment News Sources</h3>
-     
-
-        {{ macro.displaySourceList(entertainment_sources)}}
-
-        <!-- Entertainment News Section  -->
-	
+<div class ="container">
+<!-- 
+<div class ="jumbotron"> -->
+  <h1 class ="text-center">NEWS SOURCES</h1>
 </div>
+<div class ="row">
+ <ul>
+ {{macro.displaySourceList(sources)}}
 
-
-{%endblock%}
+ </ul>
+</div>
+</div>
+</body>
+{% endblock%}

@@ -1,33 +1,17 @@
 {% macro displaySourceList(source_list) %}
 
-	{% for source_row in source_list |batch(4)%}
-        <div class="row">
-        	
-	        	
-            {% for sources in source_row %}
-	            <div class="col-md-3">
-		           
-		            <div class="panel panel-default">
-						<div class="panel-heading">
-							<a href="/sources/{{sources.id}}">
-							    {{ sources.name}}
-					        </a>
-						</div>
-						<div class="panel-body">
-							<p>
-								{{ sources.description |truncate(100)}}
+    {% for source in source_list %}
 
-							</p>
-							<a href="/sources/{{sources.id}}" class="btn btn-success btn-sm">Visit {{sources.name}}</a>
-						</div>
-						
-		
-					</div>
-		        </div>
-            {% endfor %}
-	        	
+        <div class="col-md-6">
+
+          <p>{{source.name}}</p>
+
+        <p>{{source.description}}</p>
+        <a href="/articles/{{source.id}}" button type="button" class="btn btn-info ">Articles</a></button>
+
         </div>
+      
+
     {% endfor %}
 
 {% endmacro %}
-
