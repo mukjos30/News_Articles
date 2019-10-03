@@ -1,7 +1,7 @@
-from app import create_app
+from app import createApp
 from flask_script import Manager,Server
 
-app = create_app('development')
+app = createApp('development')
 
 manager = Manager(app)
 manager.add_command('server',Server)

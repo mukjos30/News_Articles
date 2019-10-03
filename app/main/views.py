@@ -13,10 +13,10 @@ def index():
     View root page function that returns the index page and its data
     """
 
-    newsSource=get_sources()
-    title = 'News Sources-catchup on whats latest'
-    print(newsSource)
-    return render_template('index.html',title=title,sources=newsSource)
+    Source=get_sources('general')
+    title = 'News Sources'
+    print(Source)
+    return render_template('index.html',title=title,sources=Source)
 
 @main.route('/articles/<string:id>')
 def source(id):

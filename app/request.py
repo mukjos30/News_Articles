@@ -7,21 +7,21 @@ base_url = None
 base_url_articles=None
 
 def config_request(app):
-    global apiKey,webUrl,articleUrl
-    apiKey=app.config['NEWS_API_KEY']
-    webUrl=app.config['NEWS_API_WEB_URL']
+    global api_key,base_url,articleUrl
+    api_key=app.config['NEWS_API_KEY']
+    base_url=app.config['NEWS_API_WEB_URL']
     articleUrl=app.config['ARTICLES_URL']
+    print(base_url)
 
 
-
-def get_sources():
+def get_sources(category):
 
     """
     Function that gets the json response to our url request
     """
 
-    get_sources_url = base_url.format(api_key)
-
+    get_sources_url = base_url.format(category,api_key)
+    print(get_sources_url)
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
