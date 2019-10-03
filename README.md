@@ -1,5 +1,6 @@
- # Pitch Project
-## Author 
+ # Project Name
+ News_Articles Project
+ ## Author 
 Josee Mukandayisenga
 ## Description
  this app will help you  list and preview news articles from various sources.   
